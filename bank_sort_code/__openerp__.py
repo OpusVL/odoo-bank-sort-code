@@ -30,6 +30,7 @@
     'website': 'http://opusvl.com',
     'depends': ['base'],
     'data': [
+        'res_partner_bank_extension_view.xml',
     ],
     'demo': [],
     'test': [],
