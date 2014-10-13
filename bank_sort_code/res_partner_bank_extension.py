@@ -26,14 +26,12 @@
 #
 ##############################################################################
 
-from openerp.osv import osv, fields
+from openerp import models, fields
 
-class res_partner_bank_extension(osv.osv):
+class res_partner_bank_extension(models.Model):
     _inherit = 'res.partner.bank'
 
-    _columns = {
-        'bank_sort_code': fields.char('Sort Code', help='e.g. 99-99-99'),
-    }
+    bank_sort_code = fields.Char(string='Sort Code', help='e.g. 99-99-99')
 
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
