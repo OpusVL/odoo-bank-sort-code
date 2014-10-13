@@ -26,12 +26,25 @@
 #
 ##############################################################################
 
-from openerp import models, fields
+from openerp.osv import osv, fields
 
-class res_partner_bank_extension(models.Model):
+class res_partner_bank_extension(osv.osv):
     _inherit = 'res.partner.bank'
 
-    bank_sort_code = fields.Char(string='Sort Code', help='e.g. 99-99-99')
+    _columns = {
+        'bank_sort_code': fields.char('Sort Code', help='e.g. 99-99-99'),
+    }
+
+    def onchange_bank_id(self, cr, uid, ids, bank_id, context=None):
+        """Add bank_sort_code to the list of fields populated from bank.
+        """
+        parent = super(res_partner_bank_extension, self).onchange_bank_id(cr, uid, ids, bank_id, context=context)
+        values = parent['value'].copy()
+        if bank_id:
+            bank = self.pool.get('res.bank').browse(cr, uid, bank_id, context=context)
+            values['bank_sort_code'] = bank.sort_code
+        return {'value': values}
+
 
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
