@@ -26,8 +26,14 @@
 #
 ##############################################################################
 
-from . import res_bank_extension
-import res_partner_bank_extension
+from openerp.osv import osv, fields
+
+class res_bank_extension(osv.osv):
+    _inherit = 'res.bank'
+
+    _columns = {
+        'sort_code': fields.char('Sort Code'),
+    }
+
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
-
