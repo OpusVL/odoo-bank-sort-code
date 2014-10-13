@@ -32,7 +32,7 @@ class res_bank_extension(osv.osv):
     _inherit = 'res.bank'
 
     _columns = {
-        'sort_code': fields.char('Sort Code'),
+        'sort_code': fields.char('Sort Code', help='e.g. 99-99-99'),
     }
 
 
