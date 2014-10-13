@@ -38,6 +38,7 @@
     'depends': ['base'],
     'data': [
         'res_partner_bank_extension_view.xml',
+        'res_bank_extension_view.xml',
     ],
     'demo': [],
     'test': [],
