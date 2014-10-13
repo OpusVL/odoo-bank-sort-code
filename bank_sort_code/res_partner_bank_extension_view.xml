@@ -6,7 +6,7 @@
             <field name="inherit_id" ref="base.view_partner_bank_form"/>
             <field name="arch" type="xml">
                 <field name="acc_number" position="after">
-                    <field name="sort_code"/>
+                    <field name="bank_sort_code"/>
                 </field>
             </field>
         </record>
