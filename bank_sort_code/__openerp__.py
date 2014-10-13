@@ -29,7 +29,7 @@
 
 {
     'name': 'Sort Code for Bank Account',
-    'version': '0.2',
+    'version': '0.3',
     'category': 'Accounting & Finance',
     'summary': 'Add sort code field to banks',
     'description': """Adds a Sort Code field to the res.partner.bank model""",
